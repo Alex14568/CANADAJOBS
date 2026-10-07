@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MapleWork Jobs – Find work in Canada</title>
+<meta name="description" content="Browse General Labour, Warehouse, Construction, Farm, Cleaning, Caregiver, Driver and Hospitality jobs in Canada.">
+<style>
+:root{--ink:#1b1f2a;--red:#c8102e;--red-d:#9e0c24;--gold:#f2b632;--bg:#f7f7f8;--card:#fff;--line:#e2e4e8;--muted:#5d6472}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:1.25rem;color:var(--red)}
+.logo span{color:var(--ink)}
+.nav a.link{margin-left:22px;font-size:.95rem;color:var(--muted)}
+.nav a.link:hover{color:var(--red)}
+.hero{background:var(--red);color:#fff;padding:56px 0 64px}
+.hero h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;max-width:640px}
+.hero p{margin-top:12px;max-width:540px;color:#ffe3e8}
+.search{margin-top:26px;display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding:8px;border-radius:10px;max-width:640px}
+.search input,.search select{flex:1 1 160px;border:0;padding:12px;font-size:1rem;border-radius:6px;background:#f1f2f4;color:var(--ink)}
+.btn{background:var(--gold);color:var(--ink);font-weight:700;border:0;padding:12px 22px;border-radius:6px;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(.95)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+section{padding:44px 0}
+h2{font-size:1.5rem;margin-bottom:18px}
+.cats{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);padding:9px 16px;border-radius:999px;cursor:pointer;font-size:.95rem;color:var(--ink)}
+.chip.on{background:var(--red);color:#fff;border-color:var(--red)}
+.jobs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:22px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.job h3{font-size:1.1rem}
+.job .meta{color:var(--muted);font-size:.9rem}
+.job .pay{font-weight:700;color:var(--red)}
+.job button{margin-top:10px;align-self:flex-start;background:var(--red);color:#fff;border:0;padding:9px 16px;border-radius:6px;cursor:pointer;font-size:.95rem}
+.job button:hover{background:var(--red-d)}
+.empty{color:var(--muted);padding:20px 0}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.how div{background:var(--card);border-left:4px solid var(--gold);padding:16px;border-radius:6px}
+.how b{display:block;margin-bottom:4px}
+.warn{background:#fff6dd;border:1px solid var(--gold);padding:16px;border-radius:8px;font-size:.95rem}
+form.apply{display:grid;gap:12px;max-width:520px}
+form.apply label{font-weight:600;font-size:.92rem;display:grid;gap:5px}
+form.apply input,form.apply select,form.apply textarea{padding:11px;border:1px solid var(--line);border-radius:6px;font:inherit}
+#msg{margin-top:12px;font-weight:600;color:var(--red)}
+footer{background:var(--ink);color:#b9bfcb;padding:30px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#07351a;font-weight:700;padding:12px 20px;border-radius:999px}
+.wa-btn:hover{filter:brightness(.95)}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.wa-note{margin-top:10px;font-size:.9rem;color:var(--muted)}
+.wa-note a{color:var(--red);text-decoration:underline}
+.job .wa-link{font-size:.9rem;color:var(--red);text-decoration:underline;margin-top:4px}
+@media(max-width:560px){.nav .link{display:none}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Maple<span>Work</span></a>
+    <nav>
+      <a class="link" href="#jobs">Jobs</a>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#apply">Apply</a>
+      <a class="link" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Find work that pays across Canada</h1>
+    <p>Labour, warehouse, farm, driving, care and hospitality jobs with the hourly wage shown up front.</p>
+    <div class="search" role="search">
+      <input id="q" type="search" placeholder="Search job title" aria-label="Search job title">
+      <select id="loc" aria-label="Location">
+        <option value="">All locations</option>
+        <option>Toronto, ON</option><option>Vancouver, BC</option><option>Calgary, AB</option>
+        <option>Edmonton, AB</option><option>Montreal, QC</option><option>Ottawa, ON</option>
+        <option>Winnipeg, MB</option><option>Halifax, NS</option>
+      </select>
+      <button class="btn" id="go">Search jobs</button>
+    </div>
+  </div>
+</div>
+
+<section id="jobs">
+  <div class="wrap">
+    <h2>Open positions</h2>
+    <div class="cats" id="cats"></div>
+    <div class="jobs" id="list" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="how" style="background:#fff">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="how">
+      <div><b>Pick a job</b>Browse by category and see the wage before you apply.</div>
+      <div><b>Send your details</b>Fill in the short form with your name, contact and experience.</div>
+      <div><b>Get a reply</b>The employer reviews your details and contacts you directly.</div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <h2>Apply</h2>
+    <form class="apply" id="form">
+      <label>Full name<input name="name" required></label>
+      <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+      <label>Phone number (with country code)<input name="phone" type="tel" required placeholder="+1 416 555 0123"></label>
+      <label>Job category<select name="cat" id="formCat" required></select></label>
+      <label>Do you have legal authorization to work in Canada?
+        <select name="auth" required><option value="">Select</option><option>Yes – citizen / PR</option><option>Yes – valid work permit</option><option>No – not yet</option></select>
+      </label>
+      <label>Experience<textarea name="exp" rows="3" placeholder="Tell us briefly about your work history"></textarea></label>
+      <button class="btn" type="submit">Send application</button>
+      <p id="msg" role="status"></p>
+    </form>
+    <div style="margin-top:26px">
+      <p style="font-weight:600;margin-bottom:10px">Prefer to chat? Message us on WhatsApp</p>
+      <a class="wa-btn" id="waMain" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <p class="wa-note">Don't have WhatsApp yet? <a href="https://www.whatsapp.com/download" target="_blank" rel="noopener">Download WhatsApp</a> (Android, iPhone or computer).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="warn"><b>Stay safe:</b> a real employer never asks you to pay for a job, a visa, a work permit, a medical or "processing". Never send money to get hired. Check work-permit rules only on the official site, canada.ca.</div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span>© <span id="yr"></span> MapleWork Jobs</span>
+    <span id="contactInfo"></span>
+  </div>
+</footer>
+<a class="wa-btn wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<script>
+// ===== YOUR DETAILS: edit only this block =====
+const CONFIG={
+  siteName:"MapleWork Jobs",
+  whatsapp:"254700000000",          // your number, digits only, with country code, no + or spaces
+  displayPhone:"+254 700 000 000",  // how the number appears on the page
+  email:"info@yourdomain.ca",
+  apiUrl:"https://yourdomain.ca/api/applications" // your backend endpoint
+};
+// ==============================================
+const wa=(text)=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+
+// Edit this list to add, remove or change jobs. Wages in CAD.
+const JOBS=[
+ {t:"General Labourer",c:"General Labour",l:"Toronto, ON",p:"CAD $19 / hour"},
+ {t:"Loader / Packer",c:"General Labour",l:"Winnipeg, MB",p:"CAD $18 / hour"},
+ {t:"Warehouse Associate",c:"Warehouse",l:"Calgary, AB",p:"CAD $20 / hour"},
+ {t:"Forklift Operator",c:"Warehouse",l:"Edmonton, AB",p:"CAD $23 / hour"},
+ {t:"Construction Labourer",c:"Construction",l:"Vancouver, BC",p:"CAD $25 / hour"},
+ {t:"Framing Carpenter",c:"Construction",l:"Ottawa, ON",p:"CAD $30 / hour"},
+ {t:"Farm Worker",c:"Farm Work",l:"Winnipeg, MB",p:"CAD $17 / hour"},
+ {t:"Greenhouse Assistant",c:"Farm Work",l:"Halifax, NS",p:"CAD $17.50 / hour"},
+ {t:"Cleaner",c:"Cleaning",l:"Toronto, ON",p:"CAD $18 / hour"},
+ {t:"Hotel Housekeeper",c:"Cleaning",l:"Vancouver, BC",p:"CAD $19 / hour"},
+ {t:"Personal Support Worker",c:"Caregiving",l:"Ottawa, ON",p:"CAD $23 / hour"},
+ {t:"Home Care Assistant",c:"Caregiving",l:"Montreal, QC",p:"CAD $21 / hour"},
+ {t:"Delivery Driver",c:"Driving",l:"Calgary, AB",p:"CAD $22 / hour"},
+ {t:"Truck Driver (Class 1)",c:"Driving",l:"Edmonton, AB",p:"CAD $32 / hour"},
+ {t:"Server",c:"Hospitality",l:"Montreal, QC",p:"CAD $16 / hour + tips"},
+ {t:"Kitchen Helper",c:"Hospitality",l:"Halifax, NS",p:"CAD $17 / hour"}
+];
+const cats=["All",...new Set(JOBS.map(j=>j.c))];
+let cat="All";
+const $=id=>document.getElementById(id);
+
+function render(){
+  const q=$("q").value.trim().toLowerCase(), loc=$("loc").value;
+  const out=JOBS.filter(j=>(cat==="All"||j.c===cat)&&(!loc||j.l===loc)&&(!q||j.t.toLowerCase().includes(q)));
+  $("list").innerHTML=out.length?out.map(j=>`
+    <article class="job">
+      <h3>${j.t}</h3>
+      <div class="meta">${j.c} • ${j.l}</div>
+      <div class="pay">${j.p}</div>
+      <button data-c="${j.c}">Apply for this job</button>
+      <a class="wa-link" target="_blank" rel="noopener" href="${wa('Hello, I am interested in the '+j.t+' job in '+j.l+'.')}">Ask about this job on WhatsApp</a>
+    </article>`).join(""):'<p class="empty">No jobs match your search. Try another category or location.</p>';
+}
+function drawCats(){
+  $("cats").innerHTML=cats.map(c=>`<button class="chip${c===cat?" on":""}" data-c="${c}">${c}</button>`).join("");
+}
+$("cats").addEventListener("click",e=>{
+  if(e.target.dataset.c){cat=e.target.dataset.c;drawCats();render();}
+});
+$("list").addEventListener("click",e=>{
+  if(e.target.matches("button[data-c]")){
+    $("formCat").value=e.target.dataset.c;
+    $("apply").scrollIntoView();
+    document.querySelector("[name=name]").focus();
+  }
+});
+$("go").addEventListener("click",render);
+$("q").addEventListener("input",render);
+$("loc").addEventListener("change",render);
+
+$("formCat").innerHTML=cats.slice(1).map(c=>`<option>${c}</option>`).join("");
+const API_URL="https://yourdomain.ca/api/applications"; // change to your backend endpoint
+$("form").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const f=e.target, btn=f.querySelector("button[type=submit]");
+  const data=Object.fromEntries(new FormData(f));
+  btn.disabled=true; $("msg").textContent="Sending...";
+  try{
+    const r=await fetch(CONFIG.apiUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+    if(!r.ok) throw new Error();
+    $("msg").textContent="Thank you! Your application has been received.";
+    f.reset();
+  }catch(err){
+    $("msg").textContent="Could not send. Please try again or message us on WhatsApp.";
+  }
+  btn.disabled=false;
+});
+const hello="Hello, I would like to ask about jobs in Canada.";
+$("waMain").href=wa(hello);$("waFloat").href=wa(hello);
+$("contactInfo").innerHTML=`<a href="mailto:${CONFIG.email}">${CONFIG.email}</a> · <a href="${wa(hello)}" target="_blank" rel="noopener">${CONFIG.displayPhone}</a>`;
+$("yr").textContent=new Date().getFullYear();
+drawCats();render();
+</script>
+</body>
+</html>
